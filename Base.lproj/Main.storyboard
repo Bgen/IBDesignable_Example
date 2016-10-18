@@ -64,6 +64,9 @@
                                             <userDefinedRuntimeAttribute type="size" keyPath="stepLineSize">
                                                 <size key="value" width="26" height="2"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="activeStepImage" value="bgProgressActive"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="passiveStepImage" value="bgProgressPassive"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="progressLineImage" value="bgProgressLine"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -94,4 +97,9 @@
             <point key="canvasLocation" x="597" y="-243"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bgProgressActive" width="16" height="16"/>
+        <image name="bgProgressLine" width="27" height="2"/>
+        <image name="bgProgressPassive" width="16" height="16"/>
+    </resources>
 </document>

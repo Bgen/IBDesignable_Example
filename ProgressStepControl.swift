@@ -39,9 +39,30 @@ public class ProgressStepControl: UIView {
         }
     }
     
-    @IBInspectable public var activeStepImage : UIImage? =  UIImage.fromColor(UIColor.orangeColor())
-    @IBInspectable public var passiveStepImage : UIImage? = UIImage.fromColor(UIColor.blueColor())
-    @IBInspectable public var progressLineImage : UIImage? = UIImage.fromColor(UIColor.grayColor())
+//    @IBInspectable public var activeStepImage : UIImage =  UIImage.fromColor(UIColor.orangeColor()){
+//        didSet{
+////            self.backgroundColor = UIColor.greenColor()
+//            self.updateStepNum()
+//            self.updateProgressLines()
+//            self.setupView()
+//            
+//        }
+//    }
+//    @IBInspectable public var passiveStepImage : UIImage = UIImage.fromColor(UIColor.blueColor()){
+//        didSet{
+//            self.setupView()
+//        }
+//    }
+//    @IBInspectable public var progressLineImage : UIImage = UIImage.fromColor(UIColor.grayColor()){
+//        didSet{
+//            self.setupView()
+//        }
+//    }
+////
+    
+    @IBInspectable public var activeStepImage : UIImage? =  UIImage.init(named: "bgProgressActive")
+    @IBInspectable public var passiveStepImage : UIImage? = UIImage.init(named: "bgProgressPassive")
+    @IBInspectable public var progressLineImage : UIImage? = UIImage.init(named: "bgProgressLine")
     
     func calculatedHeight()->CGFloat{
         return self.stepNodeSize.height
@@ -90,6 +111,13 @@ public class ProgressStepControl: UIView {
             }
         }
     }
+    
+    func updateProgressLines(){
+        for step in 0 ..< self.stepCount-1{
+            self.stepLines[step].image = self.progressLineImage
+        }
+    }
+
     func setupView(){
         self.translatesAutoresizingMaskIntoConstraints = false
         self.setContentHuggingPriority(1000, forAxis: .Horizontal)
